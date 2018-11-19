@@ -40,7 +40,12 @@ namespace FonotekaV2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form n = new Form();
+            if(this.txtLogin.Text == "nurik" && this.txtPassword.Text == "123")
+            {
+                Form ob = new Index();
+                this.Hide();
+                ob.Show();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
