@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace FonotekaV2
 {
@@ -51,6 +52,16 @@ namespace FonotekaV2
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            string pass;
+            pass = Interaction.InputBox("Секртеный код Администратора :");
+            if(pass == "717494")
+            {
+
+            }
         }
     }
 }
