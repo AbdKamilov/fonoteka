@@ -15,6 +15,7 @@ namespace FonotekaV2
         public Settings()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             string DefaultServer = Properties.Settings.Default.AppServer;
             string DefaultServerDB = Properties.Settings.Default.AppDB;
             string DefaultUsername = Properties.Settings.Default.DBuser;

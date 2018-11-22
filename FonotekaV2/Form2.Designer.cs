@@ -60,6 +60,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.listBox6 = new System.Windows.Forms.ListBox();
+            this.listBox5 = new System.Windows.Forms.ListBox();
+            this.listBox4 = new System.Windows.Forms.ListBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dvdno = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,21 +84,19 @@
             this.records = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.listBox5 = new System.Windows.Forms.ListBox();
-            this.listBox6 = new System.Windows.Forms.ListBox();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(170)))), ((int)(((byte)(243)))));
             this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -105,6 +106,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.label13);
             this.panel5.Controls.Add(this.label12);
@@ -132,10 +134,10 @@
             this.panel5.Controls.Add(this.textBox1);
             this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.label2);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 41);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(274, 550);
+            this.panel5.Size = new System.Drawing.Size(274, 591);
             this.panel5.TabIndex = 2;
             // 
             // label14
@@ -143,7 +145,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label14.Location = new System.Drawing.Point(12, 328);
+            this.label14.Location = new System.Drawing.Point(9, 369);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(118, 18);
             this.label14.TabIndex = 27;
@@ -154,7 +156,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label13.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label13.Location = new System.Drawing.Point(12, 302);
+            this.label13.Location = new System.Drawing.Point(9, 343);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(104, 18);
             this.label13.TabIndex = 26;
@@ -165,7 +167,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label12.Location = new System.Drawing.Point(12, 276);
+            this.label12.Location = new System.Drawing.Point(9, 317);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(70, 18);
             this.label12.TabIndex = 25;
@@ -176,7 +178,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label11.Location = new System.Drawing.Point(12, 250);
+            this.label11.Location = new System.Drawing.Point(9, 291);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(48, 18);
             this.label11.TabIndex = 24;
@@ -184,28 +186,28 @@
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(130, 326);
+            this.textBox10.Location = new System.Drawing.Point(127, 367);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(100, 20);
             this.textBox10.TabIndex = 23;
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(122, 300);
+            this.textBox9.Location = new System.Drawing.Point(119, 341);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(108, 20);
             this.textBox9.TabIndex = 22;
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(83, 274);
+            this.textBox8.Location = new System.Drawing.Point(80, 315);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(147, 20);
             this.textBox8.TabIndex = 21;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(83, 248);
+            this.textBox7.Location = new System.Drawing.Point(80, 289);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(147, 20);
             this.textBox7.TabIndex = 20;
@@ -215,7 +217,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(12, 224);
+            this.label10.Location = new System.Drawing.Point(9, 265);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(34, 18);
             this.label10.TabIndex = 19;
@@ -223,7 +225,7 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(83, 222);
+            this.textBox6.Location = new System.Drawing.Point(80, 263);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(147, 20);
             this.textBox6.TabIndex = 18;
@@ -233,7 +235,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(12, 198);
+            this.label9.Location = new System.Drawing.Point(9, 239);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(65, 18);
             this.label9.TabIndex = 17;
@@ -244,7 +246,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(12, 172);
+            this.label8.Location = new System.Drawing.Point(9, 213);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(72, 18);
             this.label8.TabIndex = 16;
@@ -253,7 +255,7 @@
             // listBox3
             // 
             this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(88, 173);
+            this.listBox3.Location = new System.Drawing.Point(85, 214);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(139, 17);
             this.listBox3.TabIndex = 15;
@@ -263,7 +265,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(12, 149);
+            this.label7.Location = new System.Drawing.Point(9, 190);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 18);
             this.label7.TabIndex = 14;
@@ -272,7 +274,7 @@
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(73, 150);
+            this.listBox2.Location = new System.Drawing.Point(70, 191);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(155, 17);
             this.listBox2.TabIndex = 13;
@@ -280,7 +282,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(74, 127);
+            this.listBox1.Location = new System.Drawing.Point(71, 168);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(155, 17);
             this.listBox1.TabIndex = 12;
@@ -291,7 +293,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(12, 126);
+            this.label6.Location = new System.Drawing.Point(9, 167);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 18);
             this.label6.TabIndex = 11;
@@ -299,14 +301,14 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(83, 196);
+            this.textBox5.Location = new System.Drawing.Point(80, 237);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(147, 20);
             this.textBox5.TabIndex = 10;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(74, 101);
+            this.textBox4.Location = new System.Drawing.Point(71, 142);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(156, 20);
             this.textBox4.TabIndex = 9;
@@ -316,7 +318,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(12, 103);
+            this.label5.Location = new System.Drawing.Point(9, 144);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 18);
             this.label5.TabIndex = 8;
@@ -324,7 +326,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(74, 75);
+            this.textBox3.Location = new System.Drawing.Point(71, 116);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(156, 20);
             this.textBox3.TabIndex = 7;
@@ -334,7 +336,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(12, 77);
+            this.label4.Location = new System.Drawing.Point(9, 118);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 18);
             this.label4.TabIndex = 6;
@@ -342,7 +344,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(105, 49);
+            this.textBox2.Location = new System.Drawing.Point(102, 90);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(124, 20);
             this.textBox2.TabIndex = 5;
@@ -352,7 +354,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(12, 51);
+            this.label3.Location = new System.Drawing.Point(9, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 18);
             this.label3.TabIndex = 4;
@@ -360,22 +362,23 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(73, 23);
+            this.textBox1.Location = new System.Drawing.Point(70, 64);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(157, 20);
             this.textBox1.TabIndex = 3;
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(15, 362);
+            this.button1.Location = new System.Drawing.Point(12, 403);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(228, 34);
             this.button1.TabIndex = 0;
             this.button1.Text = "Поиск";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
@@ -383,7 +386,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(12, 25);
+            this.label2.Location = new System.Drawing.Point(9, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 18);
             this.label2.TabIndex = 2;
@@ -395,7 +398,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(68, 8);
+            this.label1.Location = new System.Drawing.Point(68, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 26);
             this.label1.TabIndex = 1;
@@ -421,6 +424,33 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(718, 154);
             this.panel3.TabIndex = 1;
+            // 
+            // listBox6
+            // 
+            this.listBox6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.listBox6.FormattingEnabled = true;
+            this.listBox6.Location = new System.Drawing.Point(481, 0);
+            this.listBox6.Name = "listBox6";
+            this.listBox6.Size = new System.Drawing.Size(237, 154);
+            this.listBox6.TabIndex = 2;
+            // 
+            // listBox5
+            // 
+            this.listBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox5.FormattingEnabled = true;
+            this.listBox5.Location = new System.Drawing.Point(246, 0);
+            this.listBox5.Name = "listBox5";
+            this.listBox5.Size = new System.Drawing.Size(472, 154);
+            this.listBox5.TabIndex = 1;
+            // 
+            // listBox4
+            // 
+            this.listBox4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.Location = new System.Drawing.Point(0, 0);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.Size = new System.Drawing.Size(246, 154);
+            this.listBox4.TabIndex = 0;
             // 
             // panel4
             // 
@@ -550,32 +580,15 @@
             this.comment.HeaderText = "Comment";
             this.comment.Name = "comment";
             // 
-            // listBox4
+            // panel6
             // 
-            this.listBox4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Location = new System.Drawing.Point(0, 0);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(246, 154);
-            this.listBox4.TabIndex = 0;
-            // 
-            // listBox5
-            // 
-            this.listBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.Location = new System.Drawing.Point(246, 0);
-            this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(472, 154);
-            this.listBox5.TabIndex = 1;
-            // 
-            // listBox6
-            // 
-            this.listBox6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.listBox6.FormattingEnabled = true;
-            this.listBox6.Location = new System.Drawing.Point(481, 0);
-            this.listBox6.Name = "listBox6";
-            this.listBox6.Size = new System.Drawing.Size(237, 154);
-            this.listBox6.TabIndex = 2;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(170)))), ((int)(((byte)(243)))));
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(274, 41);
+            this.panel6.TabIndex = 3;
             // 
             // Index
             // 
@@ -586,16 +599,16 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Index";
-            this.Text = "Index";
+            this.Text = "Fonoteka 2.0";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -658,5 +671,6 @@
         private System.Windows.Forms.ListBox listBox6;
         private System.Windows.Forms.ListBox listBox5;
         private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.Panel panel6;
     }
 }

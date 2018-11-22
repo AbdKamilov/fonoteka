@@ -15,6 +15,7 @@ namespace FonotekaV2
         public Index()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void label2_Click(object sender, EventArgs e)

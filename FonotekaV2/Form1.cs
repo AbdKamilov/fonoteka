@@ -16,6 +16,7 @@ namespace FonotekaV2
         public Form1()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             // Set to no text.  
             txtPassword.Text = "";
             // The password character is an asterisk.  
@@ -60,7 +61,9 @@ namespace FonotekaV2
             pass = Interaction.InputBox("Секртеный код Администратора :");
             if(pass == "717494")
             {
-
+                Settings st = new Settings();
+                st.Show();
+                this.Hide();
             }
         }
     }
