@@ -62,8 +62,7 @@ namespace FonotekaV2
             if(pass == "717494")
             {
                 Settings st = new Settings();
-                st.Show();
-                this.Hide();
+                st.ShowDialog();
             }
         }
     }

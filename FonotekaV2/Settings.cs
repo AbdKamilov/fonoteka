@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace FonotekaV2
 {
@@ -16,22 +17,75 @@ namespace FonotekaV2
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            string DefaultServer = Properties.Settings.Default.AppServer;
-            string DefaultServerDB = Properties.Settings.Default.AppDB;
-            string DefaultUsername = Properties.Settings.Default.DBuser;
-            string DefaultPassword = Properties.Settings.Default.DBpassword;
-            string DefaultPort = Properties.Settings.Default.Dbport;
+            lblserver.Text = Properties.Settings.Default.AppServer;
+            lbldb.Text = Properties.Settings.Default.AppDB;
+            lbluser.Text = Properties.Settings.Default.DBuser;
+            lblpass.Text = Properties.Settings.Default.DBpassword;
+            lblport.Text = Properties.Settings.Default.Dbport;
         }
 
         private void label12_Click(object sender, EventArgs e)
         {
-            string DefaultServer = Properties.Settings.Default.AppServer;
-            string DefaultServerDB = Properties.Settings.Default.AppDB;
-            string DefaultUsername = Properties.Settings.Default.DBuser;
-            string DefaultPassword = Properties.Settings.Default.DBpassword;
-            string DefaultPort = Properties.Settings.Default.Dbport;
+            string tex;
+            tex = Interaction.InputBox("Сервер :");
+            if (tex !=null || tex !="")
+            {
+                MessageBox.Show(tex);
+                Properties.Settings.Default.AppServer = tex;
+                Properties.Settings.Default.Save();
+                lblserver.Text = Properties.Settings.Default.AppServer;
+            }
+        }
 
-            //PostTracker.Properties.Settings.Default.Save(); // Important for saving
+        private void label13_Click(object sender, EventArgs e)
+        {
+            string tex;
+            tex = Interaction.InputBox("База данных :");
+            if (tex != null)
+            {
+                Properties.Settings.Default.AppDB = tex;
+                Properties.Settings.Default.Save();
+                lbldb.Text = Properties.Settings.Default.AppDB;
+            }
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            string tex;
+            tex = Interaction.InputBox("Пользователь база данных :");
+            if (tex != null)
+            {
+                Properties.Settings.Default.DBuser = tex;
+                Properties.Settings.Default.Save();
+                lbluser.Text = Properties.Settings.Default.DBuser;
+            }    
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+            string tex;
+            tex = Interaction.InputBox("Пароль база данных :");
+            if (tex != null)
+            {
+                Properties.Settings.Default.DBpassword = tex;
+                Properties.Settings.Default.Save();
+                lblpass.Text = Properties.Settings.Default.DBpassword;
+            }
+           
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+            string tex;
+            tex = Interaction.InputBox("Порт база данных :");
+            if (tex != null)
+            {
+                Properties.Settings.Default.Dbport = tex;
+                Properties.Settings.Default.Save();
+                lblport.Text = Properties.Settings.Default.Dbport;
+            }
+           
         }
     }
 }

@@ -34,11 +34,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblserver = new System.Windows.Forms.Label();
+            this.lbldb = new System.Windows.Forms.Label();
+            this.lbluser = new System.Windows.Forms.Label();
+            this.lblpass = new System.Windows.Forms.Label();
+            this.lblport = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -106,60 +106,60 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Порт :";
             // 
-            // label7
+            // lblserver
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label7.Location = new System.Drawing.Point(102, 49);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 17);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "server";
+            this.lblserver.AutoSize = true;
+            this.lblserver.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblserver.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblserver.Location = new System.Drawing.Point(102, 49);
+            this.lblserver.Name = "lblserver";
+            this.lblserver.Size = new System.Drawing.Size(48, 17);
+            this.lblserver.TabIndex = 6;
+            this.lblserver.Text = "server";
             // 
-            // label8
+            // lbldb
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label8.Location = new System.Drawing.Point(134, 73);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(27, 17);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "DB";
+            this.lbldb.AutoSize = true;
+            this.lbldb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbldb.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lbldb.Location = new System.Drawing.Point(134, 73);
+            this.lbldb.Name = "lbldb";
+            this.lbldb.Size = new System.Drawing.Size(27, 17);
+            this.lbldb.TabIndex = 7;
+            this.lbldb.Text = "DB";
             // 
-            // label9
+            // lbluser
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label9.Location = new System.Drawing.Point(143, 96);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 17);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "User";
+            this.lbluser.AutoSize = true;
+            this.lbluser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbluser.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lbluser.Location = new System.Drawing.Point(143, 96);
+            this.lbluser.Name = "lbluser";
+            this.lbluser.Size = new System.Drawing.Size(38, 17);
+            this.lbluser.TabIndex = 8;
+            this.lbluser.Text = "User";
             // 
-            // label10
+            // lblpass
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label10.Location = new System.Drawing.Point(111, 119);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 17);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Pass";
+            this.lblpass.AutoSize = true;
+            this.lblpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblpass.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblpass.Location = new System.Drawing.Point(111, 119);
+            this.lblpass.Name = "lblpass";
+            this.lblpass.Size = new System.Drawing.Size(39, 17);
+            this.lblpass.TabIndex = 9;
+            this.lblpass.Text = "Pass";
             // 
-            // label11
+            // lblport
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label11.Location = new System.Drawing.Point(102, 141);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(33, 17);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "port";
+            this.lblport.AutoSize = true;
+            this.lblport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblport.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblport.Location = new System.Drawing.Point(102, 141);
+            this.lblport.Name = "lblport";
+            this.lblport.Size = new System.Drawing.Size(33, 17);
+            this.lblport.TabIndex = 10;
+            this.lblport.Text = "port";
             // 
             // label12
             // 
@@ -183,6 +183,7 @@
             this.label13.Size = new System.Drawing.Size(70, 17);
             this.label13.TabIndex = 12;
             this.label13.Text = "изменить";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label14
             // 
@@ -194,6 +195,7 @@
             this.label14.Size = new System.Drawing.Size(70, 17);
             this.label14.TabIndex = 13;
             this.label14.Text = "изменить";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // label15
             // 
@@ -205,6 +207,7 @@
             this.label15.Size = new System.Drawing.Size(70, 17);
             this.label15.TabIndex = 14;
             this.label15.Text = "изменить";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // label16
             // 
@@ -216,28 +219,29 @@
             this.label16.Size = new System.Drawing.Size(70, 17);
             this.label16.TabIndex = 15;
             this.label16.Text = "изменить";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // Settings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(394, 188);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblport);
+            this.Controls.Add(this.lblpass);
+            this.Controls.Add(this.lbluser);
+            this.Controls.Add(this.lbldb);
+            this.Controls.Add(this.lblserver);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Settings";
             this.Text = "Settings";
             this.ResumeLayout(false);
@@ -253,11 +257,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblserver;
+        private System.Windows.Forms.Label lbldb;
+        private System.Windows.Forms.Label lbluser;
+        private System.Windows.Forms.Label lblpass;
+        private System.Windows.Forms.Label lblport;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
