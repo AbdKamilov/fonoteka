@@ -30,6 +30,9 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -57,7 +60,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.listBox6 = new System.Windows.Forms.ListBox();
@@ -65,6 +67,7 @@
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvdno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cdno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.original = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,13 +87,12 @@
             this.records = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -106,6 +108,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel5.Controls.Add(this.comboBox1);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.label13);
@@ -139,6 +142,35 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(274, 591);
             this.panel5.TabIndex = 2;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(106, 456);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 28;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(170)))), ((int)(((byte)(243)))));
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(274, 41);
+            this.panel6.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(68, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 26);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Фонотека 2.0";
             // 
             // label14
             // 
@@ -393,17 +425,6 @@
             this.label2.Text = "Запись:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(68, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 26);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Фонотека 2.0";
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(136)))), ((int)(((byte)(210)))));
@@ -464,8 +485,11 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
             this.dvdno,
             this.cdno,
             this.original,
@@ -484,111 +508,129 @@
             this.option1,
             this.records,
             this.comment});
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(718, 396);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
             // 
             // dvdno
             // 
             this.dvdno.HeaderText = "DVDNo";
             this.dvdno.Name = "dvdno";
+            this.dvdno.ReadOnly = true;
             // 
             // cdno
             // 
             this.cdno.HeaderText = "CDNo";
             this.cdno.Name = "cdno";
+            this.cdno.ReadOnly = true;
             // 
             // original
             // 
             this.original.HeaderText = "№ Оригинала";
             this.original.Name = "original";
+            this.original.ReadOnly = true;
             // 
             // zoloto
             // 
             this.zoloto.HeaderText = "№ Золотого фонда";
             this.zoloto.Name = "zoloto";
+            this.zoloto.ReadOnly = true;
             // 
             // rublika
             // 
             this.rublika.HeaderText = "Рублика";
             this.rublika.Name = "rublika";
+            this.rublika.ReadOnly = true;
             // 
             // namerecord
             // 
             this.namerecord.HeaderText = "Название записи";
             this.namerecord.Name = "namerecord";
+            this.namerecord.ReadOnly = true;
             // 
             // musicauthor
             // 
             this.musicauthor.HeaderText = "Автор музыки";
             this.musicauthor.Name = "musicauthor";
+            this.musicauthor.ReadOnly = true;
             // 
             // wordauthor
             // 
             this.wordauthor.HeaderText = "Автор слов";
             this.wordauthor.Name = "wordauthor";
+            this.wordauthor.ReadOnly = true;
             // 
             // executor
             // 
             this.executor.HeaderText = "Исполнитель";
             this.executor.Name = "executor";
+            this.executor.ReadOnly = true;
             // 
             // escort
             // 
             this.escort.HeaderText = "Сопровождения";
             this.escort.Name = "escort";
+            this.escort.ReadOnly = true;
             // 
             // year
             // 
             this.year.HeaderText = "Год";
             this.year.Name = "year";
+            this.year.ReadOnly = true;
             // 
             // style
             // 
             this.style.HeaderText = "Жанр";
             this.style.Name = "style";
+            this.style.ReadOnly = true;
             // 
             // sounding
             // 
             this.sounding.HeaderText = "Звучание";
             this.sounding.Name = "sounding";
+            this.sounding.ReadOnly = true;
             // 
             // subject
             // 
             this.subject.HeaderText = "Тематика";
             this.subject.Name = "subject";
+            this.subject.ReadOnly = true;
             // 
             // department
             // 
             this.department.HeaderText = "Отдел";
             this.department.Name = "department";
+            this.department.ReadOnly = true;
             // 
             // option1
             // 
             this.option1.HeaderText = "Вариант";
             this.option1.Name = "option1";
+            this.option1.ReadOnly = true;
             // 
             // records
             // 
             this.records.HeaderText = "Records";
             this.records.Name = "records";
+            this.records.ReadOnly = true;
             // 
             // comment
             // 
             this.comment.HeaderText = "Comment";
             this.comment.Name = "comment";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(170)))), ((int)(((byte)(243)))));
-            this.panel6.Controls.Add(this.label1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(274, 41);
-            this.panel6.TabIndex = 3;
+            this.comment.ReadOnly = true;
             // 
             // Index
             // 
@@ -601,14 +643,15 @@
             this.Controls.Add(this.panel1);
             this.Name = "Index";
             this.Text = "Fonoteka 2.0";
+            this.Load += new System.EventHandler(this.Index_Load);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -649,6 +692,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ListBox listBox6;
+        private System.Windows.Forms.ListBox listBox5;
+        private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvdno;
         private System.Windows.Forms.DataGridViewTextBoxColumn cdno;
         private System.Windows.Forms.DataGridViewTextBoxColumn original;
@@ -667,10 +716,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn option1;
         private System.Windows.Forms.DataGridViewTextBoxColumn records;
         private System.Windows.Forms.DataGridViewTextBoxColumn comment;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.ListBox listBox6;
-        private System.Windows.Forms.ListBox listBox5;
-        private System.Windows.Forms.ListBox listBox4;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

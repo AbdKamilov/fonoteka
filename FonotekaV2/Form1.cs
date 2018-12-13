@@ -13,6 +13,10 @@ namespace FonotekaV2
 {
     public partial class Form1 : Form
     {
+        string connStr = "Server=" + Properties.Settings.Default.AppServer + ";Database=" + 
+            Properties.Settings.Default.AppDB + ";port=" + Properties.Settings.Default.Dbport + ";User Id=" + 
+            Properties.Settings.Default.DBuser + ";password=" + Properties.Settings.Default.DBpassword;
+
         public Form1()
         {
             InitializeComponent();
@@ -41,13 +45,18 @@ namespace FonotekaV2
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            if(this.txtLogin.Text == "nurik" && this.txtPassword.Text == "123")
-            {
+        { 
+            //if (this.txtLogin.Text == "user" && this.txtPassword.Text == "fono2018")
+            //{
                 Form ob = new Index();
                 this.Hide();
                 ob.Show();
-            }
+            //}
+           // else
+            //{
+            //    MessageBox.Show("Не верный пароль или логин!");
+            //}
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
