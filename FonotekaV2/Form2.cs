@@ -45,10 +45,11 @@ namespace FonotekaV2
             DataTable table = new DataTable();
             // создаём объект для подключения к БД
             MySqlConnection conn = new MySqlConnection(connStr);
+            MySqlConnection conn2 = new MySqlConnection(connStr);
             // устанавливаем соединение с БД
             conn.Open();
             // запрос
-            string sql = "SELECT * FROM records ORDER BY id DESC ";
+            string sql = "SELECT * FROM records ,genres , themes, sections WHERE records.Genre = genres.id AND themes.id = records.Theme and sections.id = records.Section ";
             // объект для выполнения SQL-запроса
             MySqlCommand command = new MySqlCommand(sql, conn);
             // объект для чтения ответа сервера
@@ -56,14 +57,61 @@ namespace FonotekaV2
             // читаем результат
             while (reader.Read())
             {
-                // элементы массива [] - это значения столбцов из запроса SELECT
-                //Console.WriteLine(reader[0].ToString() + " " + reader[1].ToString());
+                string janr = "", tematika="", otdel="", variant;
+                string sqlJ, sqlt, sqlo;
+                conn2.Open();
+                sqlJ = "SELECT Name FROM genres WHERE id = " + reader["Genre"].ToString();
+                sqlt = "SELECT Name FROM themes WHERE id = " + reader["Theme"].ToString();
+                sqlo = "SELECT Name FROM sections WHERE id = " + reader["Section"].ToString();
+                MySqlCommand commandJ = new MySqlCommand(sqlJ, conn2);
+                MySqlDataReader readerJ = command.ExecuteReader();
+                while (readerJ.Read())
+                {
+                    janr = readerJ["Name"].ToString(); 
+                }
+                readerJ.Close();
+                MySqlCommand commandt = new MySqlCommand(sqlt, conn2);
+                MySqlDataReader readert = command.ExecuteReader();
+                while (readert.Read())
+                {
+                    tematika = readert["Name"].ToString();
+                }
+                readert.Close();
+                MySqlCommand commando = new MySqlCommand(sqlo, conn2);
+                MySqlDataReader readero = command.ExecuteReader();
+                while (readero.Read())
+                {
+                    otdel = readero["Name"].ToString();
+                }
+                readero.Close();
+                conn2.Close();
+                if (reader["RecType"].ToString() == "0")
+                {
+                    variant = "Моно";
+                }
+                else
+                {
+                    variant = "Стерео";
+                }
                 dataGridView1.Rows.Add(
-                    reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(),
-                    reader[4].ToString(), reader[5].ToString(), reader[6].ToString(), reader[7].ToString(),
-                    reader[8].ToString(), reader[9].ToString(), reader[10].ToString(), reader[11].ToString(),
-                    reader[12].ToString(), reader[13].ToString(), reader[14].ToString(), reader[15].ToString(),
-                    reader[16].ToString(), reader[17].ToString(),reader[18].ToString()
+                reader["id"].ToString(), 
+                reader["DVDNO"].ToString(), 
+                reader["CDNo"].ToString(), 
+                reader["RecNo"].ToString(),
+                reader["LastNo"].ToString(), 
+                reader["Rubrika"].ToString(), 
+                reader["Title"].ToString(), 
+                reader["Composer"].ToString(),
+                reader["Author"].ToString(), 
+                reader["Performer"].ToString(), 
+                reader["Accompaniment"].ToString(), 
+                reader["IssueYear"].ToString(),
+                janr, 
+                reader["Phonation"].ToString(),
+                tematika,
+                otdel,
+                variant, 
+                reader["Comment"].ToString()
                     );
             }
             //dataGridView1.DataSource = table;

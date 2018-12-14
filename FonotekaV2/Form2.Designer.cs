@@ -67,6 +67,7 @@
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvdno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cdno = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,9 +85,7 @@
             this.subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.department = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.option1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.records = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -506,7 +505,6 @@
             this.subject,
             this.department,
             this.option1,
-            this.records,
             this.comment});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -620,12 +618,6 @@
             this.option1.Name = "option1";
             this.option1.ReadOnly = true;
             // 
-            // records
-            // 
-            this.records.HeaderText = "Records";
-            this.records.Name = "records";
-            this.records.ReadOnly = true;
-            // 
             // comment
             // 
             this.comment.HeaderText = "Comment";
@@ -697,6 +689,7 @@
         private System.Windows.Forms.ListBox listBox5;
         private System.Windows.Forms.ListBox listBox4;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvdno;
         private System.Windows.Forms.DataGridViewTextBoxColumn cdno;
@@ -714,8 +707,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn subject;
         private System.Windows.Forms.DataGridViewTextBoxColumn department;
         private System.Windows.Forms.DataGridViewTextBoxColumn option1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn records;
         private System.Windows.Forms.DataGridViewTextBoxColumn comment;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
