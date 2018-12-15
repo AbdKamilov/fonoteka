@@ -37,7 +37,81 @@ namespace FonotekaV2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Object selectedItemj = comboBox1.SelectedItem;
+            Object selectedItemt = comboBox3.SelectedItem;
+            Object selectedItems = comboBox2.SelectedItem;
+            string strJ = selectedItemj.ToString();
+            string strT = selectedItemt.ToString();
+            string strS = selectedItems.ToString();
 
+            DataTable table = new DataTable();
+            // создаём объект для подключения к БД
+            MySqlConnection conn = new MySqlConnection(connStr);
+            // устанавливаем соединение с БД
+            conn.Open();
+            // запрос
+            string sql = "SELECT r.*, g.*, t.*, s.* FROM records as r  " +
+                "JOIN genres as g ON r.Genre = g.id " +
+                "JOIN themes as t ON t.id = r.Theme " +
+                "JOIN sections as s ON s.id = r.Section " +
+                "WHERE " +
+                "r.Title LIKE '%"+textBox1.Text+"%' AND " +
+                "r.Performer LIKE '%"+textBox2.Text+"%' AND " +
+                "r.Composer like '%"+textBox3.Text+"%' AND " +
+                "r.Author like '%"+textBox4.Text+"%' AND " +
+                "g.Name like '%"+ strJ + "%' AND " +
+                "s.Name LIKE '%"+ strS + "%' AND " +
+                "t.Name LIKE '%"+ strT + "%' AND " +
+                "r.Rubrika LIKE '%"+textBox5.Text+"%' AND " +
+                "r.IssueYear LIKE '%"+textBox6.Text+"%' AND " +
+                "r.CDNo LIKE '%"+textBox7.Text+"%' AND " +
+                "r.RecNo LIKE '%"+textBox8.Text+"%' AND " +
+                "r.LastNo LIKE '%"+textBox9.Text+"%' AND " +
+                "r.Accompaniment LIKE '%"+textBox10.Text+"%'";
+            // объект для выполнения SQL-запроса
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            // объект для чтения ответа сервера
+            MySqlDataReader reader = command.ExecuteReader();
+            dataGridView1.Rows.Clear();
+            //dataGridView1.Refresh();
+            // читаем результат
+            while (reader.Read())
+            {
+                string variant;
+                if (reader["RecType"].ToString() == "0")
+                {
+                    variant = "Моно";
+                }
+                else
+                {
+                    variant = "Стерео";
+                }
+                dataGridView1.Rows.Add(
+                reader[0].ToString(),
+                reader["DVDNO"].ToString(),
+                reader["CDNo"].ToString(),
+                reader["RecNo"].ToString(),
+                reader["LastNo"].ToString(),
+                reader["Rubrika"].ToString(),
+                reader["Title"].ToString(),
+                reader["Composer"].ToString(),
+                reader["Author"].ToString(),
+                reader["Performer"].ToString(),
+                reader["Accompaniment"].ToString(),
+                reader["IssueYear"].ToString(),
+                reader[21].ToString(),
+                reader["Phonation"].ToString(),
+                reader[23].ToString(),
+                reader[25].ToString(),
+                variant,
+                reader["Comment"].ToString()
+                    );
+            }
+            //dataGridView1.DataSource = table;
+            reader.Close(); // закрываем reader
+            // закрываем соединение с БД
+            conn.Close();
+            dataGridView1.Refresh();
         }
 
         private void Index_Load(object sender, EventArgs e)
@@ -49,7 +123,11 @@ namespace FonotekaV2
             // устанавливаем соединение с БД
             conn.Open();
             // запрос
-            string sql = "SELECT * FROM records ,genres , themes, sections WHERE records.Genre = genres.id AND themes.id = records.Theme and sections.id = records.Section ";
+            string sql = "SELECT r.*, g.*, t.*, s.* FROM records as r  " +
+                "JOIN genres as g ON r.Genre = g.id " +
+                "JOIN themes as t ON t.id = r.Theme " +
+                "JOIN sections as s ON s.id = r.Section " +
+                "ORDER BY r.id DESC";
             // объект для выполнения SQL-запроса
             MySqlCommand command = new MySqlCommand(sql, conn);
             // объект для чтения ответа сервера
@@ -57,34 +135,7 @@ namespace FonotekaV2
             // читаем результат
             while (reader.Read())
             {
-                string janr = "", tematika="", otdel="", variant;
-                string sqlJ, sqlt, sqlo;
-                conn2.Open();
-                sqlJ = "SELECT Name FROM genres WHERE id = " + reader["Genre"].ToString();
-                sqlt = "SELECT Name FROM themes WHERE id = " + reader["Theme"].ToString();
-                sqlo = "SELECT Name FROM sections WHERE id = " + reader["Section"].ToString();
-                MySqlCommand commandJ = new MySqlCommand(sqlJ, conn2);
-                MySqlDataReader readerJ = command.ExecuteReader();
-                while (readerJ.Read())
-                {
-                    janr = readerJ["Name"].ToString(); 
-                }
-                readerJ.Close();
-                MySqlCommand commandt = new MySqlCommand(sqlt, conn2);
-                MySqlDataReader readert = command.ExecuteReader();
-                while (readert.Read())
-                {
-                    tematika = readert["Name"].ToString();
-                }
-                readert.Close();
-                MySqlCommand commando = new MySqlCommand(sqlo, conn2);
-                MySqlDataReader readero = command.ExecuteReader();
-                while (readero.Read())
-                {
-                    otdel = readero["Name"].ToString();
-                }
-                readero.Close();
-                conn2.Close();
+                string variant;
                 if (reader["RecType"].ToString() == "0")
                 {
                     variant = "Моно";
@@ -94,7 +145,7 @@ namespace FonotekaV2
                     variant = "Стерео";
                 }
                 dataGridView1.Rows.Add(
-                reader["id"].ToString(), 
+                reader[0].ToString(), 
                 reader["DVDNO"].ToString(), 
                 reader["CDNo"].ToString(), 
                 reader["RecNo"].ToString(),
@@ -106,18 +157,53 @@ namespace FonotekaV2
                 reader["Performer"].ToString(), 
                 reader["Accompaniment"].ToString(), 
                 reader["IssueYear"].ToString(),
-                janr, 
+                reader[21].ToString(),
                 reader["Phonation"].ToString(),
-                tematika,
-                otdel,
+                reader[23].ToString(),
+                reader[25].ToString(),
                 variant, 
                 reader["Comment"].ToString()
                     );
             }
             //dataGridView1.DataSource = table;
             reader.Close(); // закрываем reader
+
+            string sqlg = "select * from genres";
+            string sqlt = "select * from themes";
+            string sqls = "select * from sections";
+
+            MySqlCommand commandg = new MySqlCommand(sqlg, conn);
+            MySqlDataReader readerg = commandg.ExecuteReader();
+            comboBox1.Items.Add("");
+            while (readerg.Read())
+            {
+                comboBox1.Items.Add(readerg["Name"].ToString());
+            }
+            readerg.Close();
+
+            MySqlCommand commandt = new MySqlCommand(sqlt, conn);
+            MySqlDataReader readert = commandt.ExecuteReader();
+            comboBox3.Items.Add("");
+            while (readert.Read())
+            {
+                comboBox3.Items.Add(readert["Name"].ToString());
+            }
+            readert.Close();
+
+            MySqlCommand commandS = new MySqlCommand(sqls, conn);
+            MySqlDataReader readers = commandS.ExecuteReader();
+            comboBox2.Items.Add("");
+            while (readers.Read())
+            {
+                comboBox2.Items.Add(readers["Name"].ToString());
+            }
+            readers.Close();
             // закрываем соединение с БД
             conn.Close();
+
+            comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
+            comboBox3.SelectedIndex = 0;
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -132,6 +218,71 @@ namespace FonotekaV2
                 MessageBox.Show("dfdf");
             }
           MessageBox.Show(e.RowIndex.ToString());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = "";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox3.Text = "";
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox4.Text = "";
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            textBox5.Text = "";
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            textBox6.Text = "";
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            textBox7.Text = "";
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            textBox8.Text = "";
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            textBox9.Text = "";
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            textBox10.Text = "";
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            comboBox2.SelectedIndex = 0;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            comboBox1.SelectedIndex = 0;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            comboBox3.SelectedIndex = 0;
         }
     }
 }
