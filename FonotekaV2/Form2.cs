@@ -116,94 +116,94 @@ namespace FonotekaV2
 
         private void Index_Load(object sender, EventArgs e)
         {
-            DataTable table = new DataTable();
-            // создаём объект для подключения к БД
-            MySqlConnection conn = new MySqlConnection(connStr);
-            MySqlConnection conn2 = new MySqlConnection(connStr);
-            // устанавливаем соединение с БД
-            conn.Open();
-            // запрос
-            string sql = "SELECT r.*, g.*, t.*, s.* FROM records as r  " +
-                "JOIN genres as g ON r.Genre = g.id " +
-                "JOIN themes as t ON t.id = r.Theme " +
-                "JOIN sections as s ON s.id = r.Section " +
-                "ORDER BY r.id DESC";
-            // объект для выполнения SQL-запроса
-            MySqlCommand command = new MySqlCommand(sql, conn);
-            // объект для чтения ответа сервера
-            MySqlDataReader reader = command.ExecuteReader();
-            // читаем результат
-            while (reader.Read())
-            {
-                string variant;
-                if (reader["RecType"].ToString() == "0")
-                {
-                    variant = "Моно";
-                }
-                else
-                {
-                    variant = "Стерео";
-                }
-                dataGridView1.Rows.Add(
-                reader[0].ToString(), 
-                reader["DVDNO"].ToString(), 
-                reader["CDNo"].ToString(), 
-                reader["RecNo"].ToString(),
-                reader["LastNo"].ToString(), 
-                reader["Rubrika"].ToString(), 
-                reader["Title"].ToString(), 
-                reader["Composer"].ToString(),
-                reader["Author"].ToString(), 
-                reader["Performer"].ToString(), 
-                reader["Accompaniment"].ToString(), 
-                reader["IssueYear"].ToString(),
-                reader[21].ToString(),
-                reader["Phonation"].ToString(),
-                reader[23].ToString(),
-                reader[25].ToString(),
-                variant, 
-                reader["Comment"].ToString()
-                    );
-            }
-            //dataGridView1.DataSource = table;
-            reader.Close(); // закрываем reader
+            //DataTable table = new DataTable();
+            //// создаём объект для подключения к БД
+            //MySqlConnection conn = new MySqlConnection(connStr);
+            //MySqlConnection conn2 = new MySqlConnection(connStr);
+            //// устанавливаем соединение с БД
+            //conn.Open();
+            //// запрос
+            //string sql = "SELECT r.*, g.*, t.*, s.* FROM records as r  " +
+            //    "JOIN genres as g ON r.Genre = g.id " +
+            //    "JOIN themes as t ON t.id = r.Theme " +
+            //    "JOIN sections as s ON s.id = r.Section " +
+            //    "ORDER BY r.id DESC";
+            //// объект для выполнения SQL-запроса
+            //MySqlCommand command = new MySqlCommand(sql, conn);
+            //// объект для чтения ответа сервера
+            //MySqlDataReader reader = command.ExecuteReader();
+            //// читаем результат
+            //while (reader.Read())
+            //{
+            //    string variant;
+            //    if (reader["RecType"].ToString() == "0")
+            //    {
+            //        variant = "Моно";
+            //    }
+            //    else
+            //    {
+            //        variant = "Стерео";
+            //    }
+            //    dataGridView1.Rows.Add(
+            //    reader[0].ToString(), 
+            //    reader["DVDNO"].ToString(), 
+            //    reader["CDNo"].ToString(), 
+            //    reader["RecNo"].ToString(),
+            //    reader["LastNo"].ToString(), 
+            //    reader["Rubrika"].ToString(), 
+            //    reader["Title"].ToString(), 
+            //    reader["Composer"].ToString(),
+            //    reader["Author"].ToString(), 
+            //    reader["Performer"].ToString(), 
+            //    reader["Accompaniment"].ToString(), 
+            //    reader["IssueYear"].ToString(),
+            //    reader[21].ToString(),
+            //    reader["Phonation"].ToString(),
+            //    reader[23].ToString(),
+            //    reader[25].ToString(),
+            //    variant, 
+            //    reader["Comment"].ToString()
+            //        );
+            //}
+            ////dataGridView1.DataSource = table;
+            //reader.Close(); // закрываем reader
 
-            string sqlg = "select * from genres";
-            string sqlt = "select * from themes";
-            string sqls = "select * from sections";
+            //string sqlg = "select * from genres";
+            //string sqlt = "select * from themes";
+            //string sqls = "select * from sections";
 
-            MySqlCommand commandg = new MySqlCommand(sqlg, conn);
-            MySqlDataReader readerg = commandg.ExecuteReader();
-            comboBox1.Items.Add("");
-            while (readerg.Read())
-            {
-                comboBox1.Items.Add(readerg["Name"].ToString());
-            }
-            readerg.Close();
+            //MySqlCommand commandg = new MySqlCommand(sqlg, conn);
+            //MySqlDataReader readerg = commandg.ExecuteReader();
+            //comboBox1.Items.Add("");
+            //while (readerg.Read())
+            //{
+            //    comboBox1.Items.Add(readerg["Name"].ToString());
+            //}
+            //readerg.Close();
 
-            MySqlCommand commandt = new MySqlCommand(sqlt, conn);
-            MySqlDataReader readert = commandt.ExecuteReader();
-            comboBox3.Items.Add("");
-            while (readert.Read())
-            {
-                comboBox3.Items.Add(readert["Name"].ToString());
-            }
-            readert.Close();
+            //MySqlCommand commandt = new MySqlCommand(sqlt, conn);
+            //MySqlDataReader readert = commandt.ExecuteReader();
+            //comboBox3.Items.Add("");
+            //while (readert.Read())
+            //{
+            //    comboBox3.Items.Add(readert["Name"].ToString());
+            //}
+            //readert.Close();
 
-            MySqlCommand commandS = new MySqlCommand(sqls, conn);
-            MySqlDataReader readers = commandS.ExecuteReader();
-            comboBox2.Items.Add("");
-            while (readers.Read())
-            {
-                comboBox2.Items.Add(readers["Name"].ToString());
-            }
-            readers.Close();
-            // закрываем соединение с БД
-            conn.Close();
+            //MySqlCommand commandS = new MySqlCommand(sqls, conn);
+            //MySqlDataReader readers = commandS.ExecuteReader();
+            //comboBox2.Items.Add("");
+            //while (readers.Read())
+            //{
+            //    comboBox2.Items.Add(readers["Name"].ToString());
+            //}
+            //readers.Close();
+            //// закрываем соединение с БД
+            //conn.Close();
 
-            comboBox1.SelectedIndex = 0;
-            comboBox2.SelectedIndex = 0;
-            comboBox3.SelectedIndex = 0;
+            //comboBox1.SelectedIndex = 0;
+            //comboBox2.SelectedIndex = 0;
+            //comboBox3.SelectedIndex = 0;
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
