@@ -46,16 +46,10 @@ namespace FonotekaV2
 
         private void button1_Click(object sender, EventArgs e)
         { 
-            //if (this.txtLogin.Text == "user" && this.txtPassword.Text == "fono2018")
-            //{
-                Form ob = new Index();
-                this.Hide();
-                ob.Show();
-            //}
-           // else
-            //{
-            //    MessageBox.Show("Не верный пароль или логин!");
-            //}
+            
+            Form ob = new Index();
+            this.Hide();
+            ob.Show();
 
         }
 
