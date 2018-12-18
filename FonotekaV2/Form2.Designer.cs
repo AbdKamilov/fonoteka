@@ -30,6 +30,19 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -60,6 +73,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.listBox6 = new System.Windows.Forms.ListBox();
             this.listBox5 = new System.Windows.Forms.ListBox();
@@ -85,24 +103,6 @@
             this.option1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -171,6 +171,149 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(274, 554);
             this.panel5.TabIndex = 2;
+            // 
+            // button14
+            // 
+            this.button14.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
+            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button14.Location = new System.Drawing.Point(237, 376);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(25, 25);
+            this.button14.TabIndex = 43;
+            this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // button13
+            // 
+            this.button13.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
+            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button13.Location = new System.Drawing.Point(237, 350);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(25, 25);
+            this.button13.TabIndex = 42;
+            this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // button12
+            // 
+            this.button12.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
+            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button12.Location = new System.Drawing.Point(237, 325);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(25, 25);
+            this.button12.TabIndex = 41;
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button11
+            // 
+            this.button11.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button11.Location = new System.Drawing.Point(237, 299);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(25, 25);
+            this.button11.TabIndex = 40;
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button10.Location = new System.Drawing.Point(237, 272);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(25, 25);
+            this.button10.TabIndex = 39;
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button9
+            // 
+            this.button9.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button9.Location = new System.Drawing.Point(237, 246);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(25, 25);
+            this.button9.TabIndex = 38;
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button8
+            // 
+            this.button8.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button8.Location = new System.Drawing.Point(237, 219);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(25, 25);
+            this.button8.TabIndex = 37;
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button7.Location = new System.Drawing.Point(237, 191);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(25, 25);
+            this.button7.TabIndex = 36;
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button6.Location = new System.Drawing.Point(237, 168);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(25, 25);
+            this.button6.TabIndex = 35;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.Location = new System.Drawing.Point(237, 142);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(25, 25);
+            this.button5.TabIndex = 34;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.Location = new System.Drawing.Point(237, 116);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(25, 25);
+            this.button4.TabIndex = 33;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Location = new System.Drawing.Point(237, 90);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(25, 25);
+            this.button3.TabIndex = 32;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Location = new System.Drawing.Point(237, 62);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(25, 25);
+            this.button2.TabIndex = 31;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // comboBox3
             // 
@@ -459,6 +602,53 @@
             this.panel2.Size = new System.Drawing.Size(837, 41);
             this.panel2.TabIndex = 0;
             // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(335, 6);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(62, 29);
+            this.button19.TabIndex = 48;
+            this.button19.Text = "Доп..";
+            this.button19.UseVisualStyleBackColor = true;
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(403, 6);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(62, 29);
+            this.button18.TabIndex = 47;
+            this.button18.Text = "в Excel";
+            this.button18.UseVisualStyleBackColor = true;
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(228, 6);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(101, 29);
+            this.button17.TabIndex = 46;
+            this.button17.Text = "Удалить";
+            this.button17.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(123, 6);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(101, 29);
+            this.button16.TabIndex = 45;
+            this.button16.Text = "Изменить";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(16, 6);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(101, 29);
+            this.button15.TabIndex = 44;
+            this.button15.Text = "Добавить";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -652,195 +842,6 @@
             this.comment.HeaderText = "Comment";
             this.comment.Name = "comment";
             this.comment.ReadOnly = true;
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(16, 6);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(101, 29);
-            this.button15.TabIndex = 44;
-            this.button15.Text = "Добавить";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(123, 6);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(101, 29);
-            this.button16.TabIndex = 45;
-            this.button16.Text = "Изменить";
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // button17
-            // 
-            this.button17.Location = new System.Drawing.Point(228, 6);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(101, 29);
-            this.button17.TabIndex = 46;
-            this.button17.Text = "Удалить";
-            this.button17.UseVisualStyleBackColor = true;
-            // 
-            // button18
-            // 
-            this.button18.Location = new System.Drawing.Point(403, 6);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(62, 29);
-            this.button18.TabIndex = 47;
-            this.button18.Text = "в Excel";
-            this.button18.UseVisualStyleBackColor = true;
-            // 
-            // button19
-            // 
-            this.button19.Location = new System.Drawing.Point(335, 6);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(62, 29);
-            this.button19.TabIndex = 48;
-            this.button19.Text = "Доп..";
-            this.button19.UseVisualStyleBackColor = true;
-            // 
-            // button14
-            // 
-            this.button14.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
-            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button14.Location = new System.Drawing.Point(237, 376);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(25, 25);
-            this.button14.TabIndex = 43;
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // button13
-            // 
-            this.button13.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
-            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button13.Location = new System.Drawing.Point(237, 350);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(25, 25);
-            this.button13.TabIndex = 42;
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // button12
-            // 
-            this.button12.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
-            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button12.Location = new System.Drawing.Point(237, 325);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(25, 25);
-            this.button12.TabIndex = 41;
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // button11
-            // 
-            this.button11.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button11.Location = new System.Drawing.Point(237, 299);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(25, 25);
-            this.button11.TabIndex = 40;
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // button10
-            // 
-            this.button10.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button10.Location = new System.Drawing.Point(237, 272);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(25, 25);
-            this.button10.TabIndex = 39;
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // button9
-            // 
-            this.button9.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button9.Location = new System.Drawing.Point(237, 246);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(25, 25);
-            this.button9.TabIndex = 38;
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // button8
-            // 
-            this.button8.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button8.Location = new System.Drawing.Point(237, 219);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(25, 25);
-            this.button8.TabIndex = 37;
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button7
-            // 
-            this.button7.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button7.Location = new System.Drawing.Point(237, 191);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(25, 25);
-            this.button7.TabIndex = 36;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button6
-            // 
-            this.button6.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.Location = new System.Drawing.Point(237, 168);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(25, 25);
-            this.button6.TabIndex = 35;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.Location = new System.Drawing.Point(237, 142);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(25, 25);
-            this.button5.TabIndex = 34;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Location = new System.Drawing.Point(237, 116);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(25, 25);
-            this.button4.TabIndex = 33;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(237, 90);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(25, 25);
-            this.button3.TabIndex = 32;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = global::FonotekaV2.Properties.Resources.cancel;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Location = new System.Drawing.Point(237, 62);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(25, 25);
-            this.button2.TabIndex = 31;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Index
             // 
