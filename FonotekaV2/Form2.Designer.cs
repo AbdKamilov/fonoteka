@@ -79,9 +79,9 @@
             this.button16 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.listBox6 = new System.Windows.Forms.ListBox();
-            this.listBox5 = new System.Windows.Forms.ListBox();
-            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -586,7 +586,6 @@
             this.label2.Size = new System.Drawing.Size(55, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Запись:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel2
             // 
@@ -619,6 +618,7 @@
             this.button18.TabIndex = 47;
             this.button18.Text = "в Excel";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // button17
             // 
@@ -628,6 +628,7 @@
             this.button17.TabIndex = 46;
             this.button17.Text = "Удалить";
             this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // button16
             // 
@@ -652,44 +653,44 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel3.Controls.Add(this.listBox6);
-            this.panel3.Controls.Add(this.listBox5);
-            this.panel3.Controls.Add(this.listBox4);
+            this.panel3.Controls.Add(this.textBox12);
+            this.panel3.Controls.Add(this.textBox13);
+            this.panel3.Controls.Add(this.textBox11);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(274, 400);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(837, 154);
             this.panel3.TabIndex = 1;
             // 
-            // listBox6
+            // textBox12
             // 
-            this.listBox6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.listBox6.FormattingEnabled = true;
-            this.listBox6.Location = new System.Drawing.Point(515, 0);
-            this.listBox6.Name = "listBox6";
-            this.listBox6.Size = new System.Drawing.Size(322, 154);
-            this.listBox6.TabIndex = 2;
+            this.textBox12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox12.Location = new System.Drawing.Point(302, 0);
+            this.textBox12.Multiline = true;
+            this.textBox12.Name = "textBox12";
+            this.textBox12.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox12.Size = new System.Drawing.Size(239, 154);
+            this.textBox12.TabIndex = 1;
             // 
-            // listBox5
+            // textBox13
             // 
-            this.listBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.Location = new System.Drawing.Point(318, 0);
-            this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(519, 154);
-            this.listBox5.TabIndex = 1;
+            this.textBox13.Dock = System.Windows.Forms.DockStyle.Right;
+            this.textBox13.Location = new System.Drawing.Point(541, 0);
+            this.textBox13.Multiline = true;
+            this.textBox13.Name = "textBox13";
+            this.textBox13.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox13.Size = new System.Drawing.Size(296, 154);
+            this.textBox13.TabIndex = 2;
             // 
-            // listBox4
+            // textBox11
             // 
-            this.listBox4.AllowDrop = true;
-            this.listBox4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Location = new System.Drawing.Point(0, 0);
-            this.listBox4.MultiColumn = true;
-            this.listBox4.Name = "listBox4";
-            this.listBox4.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBox4.Size = new System.Drawing.Size(318, 154);
-            this.listBox4.TabIndex = 0;
+            this.textBox11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.textBox11.Location = new System.Drawing.Point(0, 0);
+            this.textBox11.Multiline = true;
+            this.textBox11.Name = "textBox11";
+            this.textBox11.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox11.Size = new System.Drawing.Size(302, 154);
+            this.textBox11.TabIndex = 0;
             // 
             // panel4
             // 
@@ -743,63 +744,75 @@
             // 
             // dvdno
             // 
+            this.dvdno.FillWeight = 70F;
             this.dvdno.HeaderText = "DVDNo";
             this.dvdno.Name = "dvdno";
             this.dvdno.ReadOnly = true;
+            this.dvdno.Width = 70;
             // 
             // cdno
             // 
             this.cdno.HeaderText = "CDNo";
             this.cdno.Name = "cdno";
             this.cdno.ReadOnly = true;
+            this.cdno.Width = 70;
             // 
             // original
             // 
             this.original.HeaderText = "№ Оригинала";
             this.original.Name = "original";
             this.original.ReadOnly = true;
+            this.original.Width = 70;
             // 
             // zoloto
             // 
             this.zoloto.HeaderText = "№ Золотого фонда";
             this.zoloto.Name = "zoloto";
             this.zoloto.ReadOnly = true;
+            this.zoloto.Width = 70;
             // 
             // rublika
             // 
-            this.rublika.HeaderText = "Рублика";
+            this.rublika.HeaderText = "Рубрика";
             this.rublika.Name = "rublika";
             this.rublika.ReadOnly = true;
+            this.rublika.Width = 70;
             // 
             // namerecord
             // 
+            this.namerecord.FillWeight = 150F;
             this.namerecord.HeaderText = "Название записи";
             this.namerecord.Name = "namerecord";
             this.namerecord.ReadOnly = true;
+            this.namerecord.Width = 180;
             // 
             // musicauthor
             // 
             this.musicauthor.HeaderText = "Автор музыки";
             this.musicauthor.Name = "musicauthor";
             this.musicauthor.ReadOnly = true;
+            this.musicauthor.Width = 150;
             // 
             // wordauthor
             // 
             this.wordauthor.HeaderText = "Автор слов";
             this.wordauthor.Name = "wordauthor";
             this.wordauthor.ReadOnly = true;
+            this.wordauthor.Width = 150;
             // 
             // executor
             // 
             this.executor.HeaderText = "Исполнитель";
             this.executor.Name = "executor";
             this.executor.ReadOnly = true;
+            this.executor.Width = 160;
             // 
             // escort
             // 
             this.escort.HeaderText = "Сопровождения";
             this.escort.Name = "escort";
             this.escort.ReadOnly = true;
+            this.escort.Width = 160;
             // 
             // year
             // 
@@ -812,6 +825,7 @@
             this.style.HeaderText = "Жанр";
             this.style.Name = "style";
             this.style.ReadOnly = true;
+            this.style.Width = 150;
             // 
             // sounding
             // 
@@ -824,18 +838,21 @@
             this.subject.HeaderText = "Тематика";
             this.subject.Name = "subject";
             this.subject.ReadOnly = true;
+            this.subject.Width = 120;
             // 
             // department
             // 
             this.department.HeaderText = "Отдел";
             this.department.Name = "department";
             this.department.ReadOnly = true;
+            this.department.Width = 120;
             // 
             // option1
             // 
             this.option1.HeaderText = "Вариант";
             this.option1.Name = "option1";
             this.option1.ReadOnly = true;
+            this.option1.Width = 80;
             // 
             // comment
             // 
@@ -863,6 +880,7 @@
             this.panel6.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -903,29 +921,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.ListBox listBox6;
-        private System.Windows.Forms.ListBox listBox5;
-        private System.Windows.Forms.ListBox listBox4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dvdno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cdno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn original;
-        private System.Windows.Forms.DataGridViewTextBoxColumn zoloto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rublika;
-        private System.Windows.Forms.DataGridViewTextBoxColumn namerecord;
-        private System.Windows.Forms.DataGridViewTextBoxColumn musicauthor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wordauthor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn executor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn escort;
-        private System.Windows.Forms.DataGridViewTextBoxColumn year;
-        private System.Windows.Forms.DataGridViewTextBoxColumn style;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sounding;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subject;
-        private System.Windows.Forms.DataGridViewTextBoxColumn department;
-        private System.Windows.Forms.DataGridViewTextBoxColumn option1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn comment;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button2;
@@ -946,5 +943,26 @@
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dvdno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cdno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn original;
+        private System.Windows.Forms.DataGridViewTextBoxColumn zoloto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rublika;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namerecord;
+        private System.Windows.Forms.DataGridViewTextBoxColumn musicauthor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wordauthor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn executor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn escort;
+        private System.Windows.Forms.DataGridViewTextBoxColumn year;
+        private System.Windows.Forms.DataGridViewTextBoxColumn style;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sounding;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn department;
+        private System.Windows.Forms.DataGridViewTextBoxColumn option1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn comment;
     }
 }

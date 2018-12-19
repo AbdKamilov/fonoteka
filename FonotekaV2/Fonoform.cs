@@ -17,13 +17,15 @@ namespace FonotekaV2
         {
             InitializeComponent();
         }
+        public bool insertStatus = false;
+
         string connStr = "Server=" + Properties.Settings.Default.AppServer + ";Database=" +
             Properties.Settings.Default.AppDB + ";User Id=" + Properties.Settings.Default.DBuser +
             ";password=" + Properties.Settings.Default.DBpassword + ";port=" + Properties.Settings.Default.Dbport;
 
         private void Fonoform_Load(object sender, EventArgs e)
-        {    
-            DataTable table = new DataTable();
+        {
+            insertStatus = false;
             // создаём объект для подключения к БД
             MySqlConnection conn = new MySqlConnection(connStr);
             MySqlConnection conn2 = new MySqlConnection(connStr);
@@ -61,12 +63,12 @@ namespace FonotekaV2
             conn.Close();
 
             comboBox3.Items.Add("Моно");
-            comboBox3.Items.Add("Соло");
+            comboBox3.Items.Add("Стерео");
 
-            comboBox1.SelectedIndex = 0;
-            comboBox2.SelectedIndex = 0;
-            comboBox3.SelectedIndex = 0;
-            comboBox4.SelectedIndex = 0;
+            //comboBox1.SelectedIndex = 0;
+            //comboBox2.SelectedIndex = 0;
+            //comboBox3.SelectedIndex = 0;
+            //comboBox4.SelectedIndex = 0;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -80,12 +82,28 @@ namespace FonotekaV2
             int janrID=0, themeID=0, sectionID=0, recType=0;
             Object selectedItemj = comboBox1.SelectedItem;
             Object selectedItemt = comboBox4.SelectedItem;
-            Object selectedItemtype = comboBox4.SelectedItem;
+            Object selectedItemtype = comboBox3.SelectedItem;
             Object selectedItems = comboBox2.SelectedItem;
-            string strJ = selectedItemj.ToString();
-            string strT = selectedItemt.ToString();
-            string strS = selectedItems.ToString();
-            if (selectedItemtype.ToString() == "Моно")
+            string strJ;
+            string strT;
+            string strS;
+            if (selectedItemj == null)
+                strJ = "";
+            else
+                strJ = selectedItemj.ToString();
+            if (selectedItemt == null)
+                strT = "";
+            else
+                strT = selectedItemt.ToString();
+            if (selectedItems == null)
+                strS = "";
+            else
+                strS = selectedItems.ToString();
+            if (selectedItemtype == null)
+            {
+                recType = 3;
+            }
+            else if (selectedItemtype.ToString() == "Моно")
             {
                 recType = 0;
             }
@@ -111,20 +129,18 @@ namespace FonotekaV2
 
                 MySqlCommand commandt = new MySqlCommand(sqlt, conn);
                 MySqlDataReader readert = commandt.ExecuteReader();
-                comboBox3.Items.Add("");
                 while (readert.Read())
                 {
                     themeID = int.Parse(readert["id"].ToString());
-            }
+                }
                 readert.Close();
 
                 MySqlCommand commandS = new MySqlCommand(sqls, conn);
                 MySqlDataReader readers = commandS.ExecuteReader();
-                comboBox2.Items.Add("");
                 while (readers.Read())
                 {
                     sectionID = int.Parse(readers["id"].ToString());
-            }
+                }
                 readers.Close();
                 // закрываем соединение с БД
                 conn.Close();
@@ -174,10 +190,8 @@ namespace FonotekaV2
                 MySqlDataReader MyReader2;
                 MyConn2.Open();
                 MyReader2 = MyCommand2.ExecuteReader();     // Here our query will be executed and data saved into the database.  
-                MessageBox.Show("Save Data");
-                while (MyReader2.Read())
-                {
-                }
+                MessageBox.Show("Данные успешно добавлено!");
+                insertStatus = true;
                 MyConn2.Close();
                 this.Close();
             }
