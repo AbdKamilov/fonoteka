@@ -38,7 +38,7 @@ namespace FonotekaV2
         }
 
         // search
-        private void button1_Click(object sender, EventArgs e)
+        private void search_Click(object sender, EventArgs e)
         {
             Object selectedItemj = comboBox1.SelectedItem;
             Object selectedItemt = comboBox3.SelectedItem;
@@ -243,9 +243,9 @@ namespace FonotekaV2
             // закрываем соединение с БД
             conn.Close();
 
-            comboBox1.SelectedIndex = 0;
-            comboBox2.SelectedIndex = 0;
-            comboBox3.SelectedIndex = 0;
+            //comboBox1.SelectedIndex = 0;
+            //comboBox2.SelectedIndex = 0;
+            //comboBox3.SelectedIndex = 0;
             //t.Abort();
         }
 
