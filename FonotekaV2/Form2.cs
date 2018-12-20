@@ -9,6 +9,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Microsoft.Office.Interop.Excel;
+using _Excel = Microsoft.Office.Interop.Excel;
 
 
 namespace FonotekaV2
@@ -28,14 +30,14 @@ namespace FonotekaV2
             
         }
 
-        public void StartForm()
-        {
-            //using (ProgressLoad prog = new ProgressLoad())
-            //{
-            //    prog.ShowDialog(this);
-            //}
-            Application.Run(new ProgressLoad());
-        }
+        //public void StartForm()
+        //{
+        //    //using (ProgressLoad prog = new ProgressLoad())
+        //    //{
+        //    //    prog.ShowDialog(this);
+        //    //}
+        //    //Application.Run(new ProgressLoad());
+        //}
 
         // search
         private void search_Click(object sender, EventArgs e)
@@ -348,7 +350,7 @@ namespace FonotekaV2
 
         private void Index_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void button16_Click(object sender, EventArgs e)
@@ -544,7 +546,31 @@ namespace FonotekaV2
         //в Excel
         private void button18_Click(object sender, EventArgs e)
         {
+            Excel ex = new Excel();
+            ex.CreateNewFile();
+            string[,] dataString = new string[500, 17];
+            dataString = getDataString();
+            ex.WriteRange(3,3,503,19,dataString);
 
+        }
+
+        public string [,] getDataString()
+        {
+            string[,] datastring = new string[500,17];
+            int flag = 0;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (flag == 500)
+                    break;
+
+                for (int j = 1; j < 18; j++)
+                {
+                    datastring[flag, j-1] = row.Cells[j].Value.ToString();
+                }
+                flag++;
+            }
+            
+            return datastring;
         }
     }
 }
