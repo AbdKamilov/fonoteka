@@ -45,11 +45,15 @@ namespace FonotekaV2
         }
 
         private void button1_Click(object sender, EventArgs e)
-        { 
-            
-            Form ob = new Index();
-            this.Hide();
-            ob.Show();
+        {
+            if (("test" == txtLogin.Text && "123" == txtPassword.Text) || ("test2" == txtLogin.Text && "321" == txtPassword.Text))
+            {
+                Form ob = new Index();
+                this.Hide();
+                ob.Show();
+            }
+            else
+                MessageBox.Show("Вы ввели неправильно логин или пароль!");
 
         }
 
@@ -67,6 +71,11 @@ namespace FonotekaV2
                 Settings st = new Settings();
                 st.ShowDialog();
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Для восстановление пароля обратитесь к вашему программисту!","Восстановление пароля.", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

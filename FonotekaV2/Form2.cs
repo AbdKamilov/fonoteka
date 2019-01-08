@@ -86,7 +86,7 @@ namespace FonotekaV2
                 "r.CDNo LIKE '%"+textBox7.Text+"%' AND " +
                 "r.RecNo LIKE '%"+textBox8.Text+"%' AND " +
                 "r.LastNo LIKE '%"+textBox9.Text+"%' AND " +
-                "r.Accompaniment LIKE '%"+textBox10.Text+ "%'";
+                "r.Accompaniment LIKE '%"+textBox10.Text+ "%' ORDER BY r.id ASC";
             // объект для выполнения SQL-запроса
             MySqlCommand command = new MySqlCommand(sql, conn);
             // объект для чтения ответа сервера
@@ -171,7 +171,7 @@ namespace FonotekaV2
             string sql = "SELECT r.*, g.*, t.*, s.* FROM records as r  " +
                 "JOIN genres as g ON r.Genre = g.id " +
                 "JOIN themes as t ON t.id = r.Theme " +
-                "JOIN sections as s ON s.id = r.Section ";
+                "JOIN sections as s ON s.id = r.Section ORDER BY r.id ASC";
             // объект для выполнения SQL-запроса
             MySqlCommand command = new MySqlCommand(sql, conn);
             // объект для чтения ответа сервера
@@ -456,7 +456,7 @@ namespace FonotekaV2
                 "r.CDNo LIKE '%" + textBox7.Text + "%' AND " +
                 "r.RecNo LIKE '%" + textBox8.Text + "%' AND " +
                 "r.LastNo LIKE '%" + textBox9.Text + "%' AND " +
-                "r.Accompaniment LIKE '%" + textBox10.Text + "%'";
+                "r.Accompaniment LIKE '%" + textBox10.Text + "%' ORDER BY r.id ASC";
             // объект для выполнения SQL-запроса
             MySqlCommand command = new MySqlCommand(sql, conn);
             // объект для чтения ответа сервера
@@ -571,6 +571,12 @@ namespace FonotekaV2
             }
             
             return datastring;
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            ResetPass form = new ResetPass();
+            form.ShowDialog();
         }
     }
 }
