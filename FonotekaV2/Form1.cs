@@ -13,9 +13,8 @@ namespace FonotekaV2
 {
     public partial class Form1 : Form
     {
-        string connStr = "Server=" + Properties.Settings.Default.AppServer + ";Database=" + 
-            Properties.Settings.Default.AppDB + ";port=" + Properties.Settings.Default.Dbport + ";User Id=" + 
-            Properties.Settings.Default.DBuser + ";password=" + Properties.Settings.Default.DBpassword;
+        string connStr = "Server=" + Properties.Settings.Default.AppServer + ";Database=" +
+            Properties.Settings.Default.AppDB + ";User Id=" + Properties.Settings.Default.DBuser + ";password=" + Properties.Settings.Default.DBpassword + ";port=" + Properties.Settings.Default.Dbport + ";CharSet=utf8";
 
         public Form1()
         {
@@ -46,15 +45,24 @@ namespace FonotekaV2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (("test" == txtLogin.Text && "123" == txtPassword.Text) || ("test2" == txtLogin.Text && "321" == txtPassword.Text))
+            if (("ФоноКыр" == txtLogin.Text && "2019К" == txtPassword.Text) || ("ФоноРус" == txtLogin.Text && "2019Р" == txtPassword.Text))
             {
-                Form ob = new Index();
+                Index ob = new Index();
                 this.Hide();
+                ob.Show();
+            }
+            else if ("ФоноПоиск" == txtLogin.Text && "2019Поиск" == txtPassword.Text)
+            {
+                Index ob = new Index();
+                this.Hide();
+                ob.StatusUser();
                 ob.Show();
             }
             else
                 MessageBox.Show("Вы ввели неправильно логин или пароль!");
-
+            //Form ob = new Index();
+            //this.Hide();
+            //ob.Show();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

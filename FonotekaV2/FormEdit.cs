@@ -20,8 +20,8 @@ namespace FonotekaV2
         public string janrName, otdelName, themeName, recName;
 
         string connStr = "Server=" + Properties.Settings.Default.AppServer + ";Database=" +
-        Properties.Settings.Default.AppDB + ";User Id=" + Properties.Settings.Default.DBuser +
-        ";password=" + Properties.Settings.Default.DBpassword + ";port=" + Properties.Settings.Default.Dbport;
+            Properties.Settings.Default.AppDB + ";User Id=" + Properties.Settings.Default.DBuser + ";password=" + Properties.Settings.Default.DBpassword + ";port=" + Properties.Settings.Default.Dbport + ";CharSet=utf8";
+
 
         private void button1_Click(object sender, EventArgs e)
         {

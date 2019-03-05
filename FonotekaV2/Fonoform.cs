@@ -20,8 +20,8 @@ namespace FonotekaV2
         public bool insertStatus = false;
 
         string connStr = "Server=" + Properties.Settings.Default.AppServer + ";Database=" +
-            Properties.Settings.Default.AppDB + ";User Id=" + Properties.Settings.Default.DBuser +
-            ";password=" + Properties.Settings.Default.DBpassword + ";port=" + Properties.Settings.Default.Dbport;
+            Properties.Settings.Default.AppDB + ";User Id=" + Properties.Settings.Default.DBuser + ";password=" + Properties.Settings.Default.DBpassword + ";port=" + Properties.Settings.Default.Dbport + ";CharSet=utf8";
+
 
         private void Fonoform_Load(object sender, EventArgs e)
         {

@@ -20,7 +20,7 @@ namespace FonotekaV2
         public int sectedRow;
 
         string connStr = "Server=" + Properties.Settings.Default.AppServer + ";Database=" +
-            Properties.Settings.Default.AppDB + ";User Id=" + Properties.Settings.Default.DBuser + ";password=" + Properties.Settings.Default.DBpassword + ";port=" + Properties.Settings.Default.Dbport;
+            Properties.Settings.Default.AppDB + ";User Id=" + Properties.Settings.Default.DBuser + ";password=" + Properties.Settings.Default.DBpassword + ";port=" + Properties.Settings.Default.Dbport + ";CharSet=utf8";
 
 
         public Index()
@@ -95,6 +95,7 @@ namespace FonotekaV2
             dataGridView1.Refresh();
             //dataGridView1.Refresh();
             // читаем результат
+            //reader.Read();
             while (reader.Read())
             {
                 string variant;
@@ -131,7 +132,6 @@ namespace FonotekaV2
             reader.Close(); // закрываем reader
             // закрываем соединение с БД
             conn.Close();
-           
             //t.Abort();
         }
 
@@ -501,7 +501,6 @@ namespace FonotekaV2
             reader.Close(); // закрываем reader
             // закрываем соединение с БД
             conn.Close();
-
             //t.Abort();
         }
 
@@ -546,27 +545,54 @@ namespace FonotekaV2
         //в Excel
         private void button18_Click(object sender, EventArgs e)
         {
-            Excel ex = new Excel();
-            ex.CreateNewFile();
-            string[,] dataString = new string[500, 17];
-            dataString = getDataString();
-            ex.WriteRange(3,3,503,19,dataString);
+            int DataSize = Int32.Parse(dataGridView1.RowCount.ToString());
+            if(DataSize == 0 || DataSize == null)
+            {
+                MessageBox.Show("Нет данных для печати!","Ошибка!!!");
+            }
+            else
+            {
+                if(DataSize > 500)
+                {
+                    Excel ex = new Excel();
+                    ex.CreateNewFile(500);
+                    string[,] dataString = new string[500, 12];
+                    dataString = getDataString(500);
+                    ex.WriteRange(3, 1, 502, 12, dataString);
+                }
+                else
+                {
+                    Excel ex = new Excel();
+                    ex.CreateNewFile(DataSize);
+                    string[,] dataString = new string[DataSize, 12];
+                    dataString = getDataString(DataSize);
+                    ex.WriteRange(3, 1, DataSize+2, 12, dataString);
+                }
+               
+            }
 
         }
 
-        public string [,] getDataString()
+        public string [,] getDataString(int DataSize)
         {
-            string[,] datastring = new string[500,17];
+            string[,] datastring = new string[DataSize, 12];
             int flag = 0;
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if (flag == 500)
+                if (flag == DataSize)
                     break;
-
-                for (int j = 1; j < 18; j++)
-                {
-                    datastring[flag, j-1] = row.Cells[j].Value.ToString();
-                }
+                datastring[flag, 0] = row.Cells[1].Value.ToString();
+                datastring[flag, 1] = row.Cells[2].Value.ToString();
+                datastring[flag, 2] = row.Cells[4].Value.ToString();
+                datastring[flag, 3] = row.Cells[6].Value.ToString();
+                datastring[flag, 4] = row.Cells[7].Value.ToString();
+                datastring[flag, 5] = row.Cells[8].Value.ToString();
+                datastring[flag, 6] = row.Cells[9].Value.ToString();
+                datastring[flag, 7] = row.Cells[10].Value.ToString();
+                datastring[flag, 8] = row.Cells[11].Value.ToString();
+                datastring[flag, 9] = row.Cells[13].Value.ToString();
+                datastring[flag, 10] = row.Cells[15].Value.ToString();
+                datastring[flag, 11] = row.Cells[16].Value.ToString();
                 flag++;
             }
             
@@ -577,6 +603,15 @@ namespace FonotekaV2
         {
             ResetPass form = new ResetPass();
             form.ShowDialog();
+        }
+
+        public void StatusUser()
+        {
+            button15.Enabled = false;
+            button16.Enabled = false;
+            button17.Enabled = false;
+            //button18.Enabled = false;
+            button19.Enabled = false;
         }
     }
 }
