@@ -369,7 +369,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 26);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Фонотека 2.3";
+            this.label1.Text = "Фонотека 2.4";
             // 
             // label14
             // 
@@ -923,7 +923,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Index";
-            this.Text = "Fonoteka 2.3";
+            this.Text = "Fonoteka 2.4";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Index_FormClosing);
             this.Load += new System.EventHandler(this.Index_Load);
             this.panel1.ResumeLayout(false);

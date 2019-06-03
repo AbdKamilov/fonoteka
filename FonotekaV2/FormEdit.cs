@@ -37,7 +37,7 @@ namespace FonotekaV2
             if (selectedItemtype.ToString() == "Моно")
             {
                 recType = 0;
-                recName = "Mono";
+                recName = "Моно";
             }
             else if (selectedItemtype.ToString() == "Стерео")
             {
