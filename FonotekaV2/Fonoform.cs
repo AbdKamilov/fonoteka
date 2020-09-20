@@ -64,6 +64,7 @@ namespace FonotekaV2
 
             comboBox3.Items.Add("Моно");
             comboBox3.Items.Add("Стерео");
+            comboBox3.Items.Add("подлен.пер.");
 
             //comboBox1.SelectedIndex = 0;
             //comboBox2.SelectedIndex = 0;
@@ -109,6 +110,8 @@ namespace FonotekaV2
             }
             else if (selectedItemtype.ToString() == "Стерео")
                 recType = 1;
+            else if (selectedItemtype.ToString() == "подлен.пер.")
+                recType = 2;
             try
             {
                 MySqlConnection conn = new MySqlConnection(connStr);

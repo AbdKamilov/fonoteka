@@ -103,9 +103,17 @@ namespace FonotekaV2
                 {
                     variant = "Моно";
                 }
-                else
+                else if (reader["RecType"].ToString() == "1")
                 {
                     variant = "Стерео";
+                }
+                else if (reader["RecType"].ToString() == "2")
+                {
+                    variant = "подлен.пер.";
+                }
+                else
+                {
+                    variant = "";
                 }
                 dataGridView1.Rows.Add(
                 reader[0].ToString(),
@@ -187,6 +195,14 @@ namespace FonotekaV2
                 else if (reader["RecType"].ToString() == "1")
                 {
                     variant = "Стерео";
+                }
+                else if (reader["RecType"].ToString() == "2")
+                {
+                    variant = "подлен.пер.";
+                }
+                else
+                {
+                    variant = "";
                 }
                 dataGridView1.Rows.Add(
                 reader[0].ToString(),
@@ -468,14 +484,16 @@ namespace FonotekaV2
             while (reader.Read())
             {
                 string variant;
-                if (reader["RecType"].ToString() == "0")
-                {
+                if (reader["RecType"].ToString() == "0"){
                     variant = "Моно";
-                }
-                else
-                {
+                } else if (reader["RecType"].ToString() == "1"){
                     variant = "Стерео";
+                } else if (reader["RecType"].ToString() == "2"){
+                    variant = "подлен.пер.";
+                } else {
+                    variant = "";
                 }
+
                 dataGridView1.Rows.Add(
                 reader[0].ToString(),
                 reader["DVDNO"].ToString(),
